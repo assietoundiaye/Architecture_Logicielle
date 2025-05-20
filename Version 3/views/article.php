@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title><?= htmlspecialchars($article['titre']) ?> - École Supérieure Polytechnique</title>
+    <title><?= htmlspecialchars($article['titre']) ?> -- École Supérieure Polytechnique</title>
     <link rel="stylesheet" href="../views/css/index2.css">
 </head>
 <body>
