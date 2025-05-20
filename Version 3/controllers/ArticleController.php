@@ -32,5 +32,12 @@ class ArticleController {
         $categories = $this->categoryModel->getAllCategories();
         require '../views/article.php';
     }
+
+    public function search() {
+        $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : '';
+        $articles = $this->articleModel->searchArticles($searchTerm);
+        $categories = $this->categoryModel->getAllCategories();
+        require '../views/home.php';
+    }
 }
 ?>
