@@ -56,7 +56,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Page d'accueil</title>
+    <title>Page -- d'accueil</title>
     <link rel="stylesheet" href="css/index2.css">
 </head>
 <body>
