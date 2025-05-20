@@ -34,7 +34,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Actualités - École Supérieure Polytechnique</title>
+    <title>Page d'acceuil</title>
     <link rel="stylesheet" href="css/index2.css">
 </head>
 <body>
