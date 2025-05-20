@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Actualités - École Supérieure Polytechnique</title>
+    <title>Page d'acceuil</title>
     <link rel="stylesheet" href="../views/css/index2.css">
 </head>
 <body>
