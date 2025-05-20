@@ -41,7 +41,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title><?= htmlspecialchars($article['titre']) ?> - École Supérieure Polytechnique</title>
+    <title><?= htmlspecialchars($article['titre']) ?> -- École Supérieure Polytechnique</title>
     <link rel="stylesheet" href="css/index2.css">
 </head>
 <body>
