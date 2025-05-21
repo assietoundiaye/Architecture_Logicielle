@@ -13,7 +13,8 @@ class Article {
         } else {
             $stmt = $this->pdo->query("SELECT * FROM Article ORDER BY dateCreation DESC");
         }
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     public function getArticleById($id) {
@@ -22,13 +23,9 @@ class Article {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function searchArticles($searchTerm) {
-        if (empty($searchTerm)) {
-            return $this->getAllArticles(); // Return all articles if search term is empty
-        }
-        $stmt = $this->pdo->prepare("SELECT * FROM Article WHERE titre LIKE :search OR contenu LIKE :search ORDER BY dateCreation DESC");
-        $searchParam = "%$searchTerm%";
-        $stmt->execute(['search' => $searchParam]);
+    public function getCommentsByArticleId($articleId) {
+        $stmt = $this->pdo->prepare("SELECT * FROM Commentaire WHERE article_id = :article_id ORDER BY dateCreation DESC");
+        $stmt->execute(['article_id' => $articleId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

@@ -29,15 +29,27 @@ class ArticleController {
         if (!$article) {
             die("Article non trouvé.");
         }
+        $comments = $this->articleModel->getCommentsByArticleId($articleId);
         $categories = $this->categoryModel->getAllCategories();
-        require '../views/article.php';
-    }
 
-    public function search() {
-        $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : '';
-        $articles = $this->articleModel->searchArticles($searchTerm);
-        $categories = $this->categoryModel->getAllCategories();
-        require '../views/home.php';
+        // Handle comment submission
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['commentaire']) && isset($_POST['auteur'])) {
+            $contenu = trim($_POST['commentaire']);
+            $auteur = trim($_POST['auteur']);
+            if (!empty($contenu) && !empty($auteur)) {
+                $stmt = $this->articleModel->pdo->prepare("INSERT INTO Commentaire (contenu, article_id, auteur) VALUES (:contenu, :article_id, :auteur)");
+                $stmt->execute([
+                    'contenu' => $contenu,
+                    'article_id' => $articleId,
+                    'auteur' => $auteur
+                ]);
+                // Redirect to avoid form resubmission
+                header("Location: index.php?action=article&id=$articleId");
+                exit;
+            }
+        }
+
+        require '../views/article.php';
     }
 }
 ?>

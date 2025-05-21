@@ -1,8 +1,8 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $dbname = 'mglsi_news';
-    private $user = 'mglsi_user';
+    private $dbname = 'master1';
+    private $user = 'mglsi_user2';
     private $password = 'passer';
     private $pdo;
 

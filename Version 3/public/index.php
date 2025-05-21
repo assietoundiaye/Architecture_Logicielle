@@ -13,9 +13,6 @@ switch ($action) {
     case 'article':
         $controller->article();
         break;
-    case 'search':
-        $controller->search();
-        break;
     case 'home':
     default:
         $controller->home();

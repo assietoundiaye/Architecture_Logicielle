@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Page d'accueil</title>
+    <title>Actualités - École Supérieure Polytechnique</title>
     <link rel="stylesheet" href="../views/css/index2.css">
 </head>
 <body>
@@ -17,10 +17,9 @@
                     <li class="nav-item"><a href="index.php" class="nav-link active">Accueil</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contacts</a></li>
                 </ul>
-                <form class="search-form" role="search" method="get" action="index.php">
-                    <input class="search-input" type="search" name="search" placeholder="Rechercher" aria-label="Search">
+                <form class="search-form" role="search">
+                    <input class="search-input" type="search" placeholder="Rechercher" aria-label="Search">
                     <button class="btn-custom" type="submit">Rechercher</button>
-                    <input type="hidden" name="action" value="search">
                 </form>
             </div>
         </div>
