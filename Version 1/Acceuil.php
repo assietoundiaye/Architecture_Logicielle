@@ -66,7 +66,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="nav-container">
         <a class="nav-brand" href="Acceuil.php">
             <img src="images/img2.png" alt="Logo" width="45" height="30">
-            École Supérieure Polytechnique
+            École Supérieure Polytechnique de dakar
         </a>
         <div class="nav-content">
             <ul class="nav-list">
