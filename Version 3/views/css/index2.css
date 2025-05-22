@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Réinitialisation de base */
+/* Reset de base */
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +11,13 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Barre de navigation */
+/* Navigation */
 .custom-nav {
     background-color: #0c3066;
-    padding: 0.75rem 1rem;
-    width: 100%;
+    padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -27,6 +27,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 .nav-brand {
@@ -50,8 +51,8 @@ body {
 .nav-list {
     list-style: none;
     display: flex;
-    align-items: center;
     margin: 0;
+    padding: 0;
 }
 
 .nav-item {
@@ -64,16 +65,13 @@ body {
     padding: 8px 12px;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.nav-link:hover {
-    color: #a3bffa;
-}
-
+.nav-link:hover,
 .nav-link.active {
     background-color: #0a254f;
-    border-radius: 5px;
 }
 
 .search-form {
@@ -83,24 +81,23 @@ body {
 
 .search-input {
     padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-right: none;
+    border: none;
     border-radius: 5px 0 0 5px;
     font-size: 1rem;
     outline: none;
+    width: 200px;
 }
 
 .btn-custom {
     background-color: #0c3066;
     color: white;
-    border: 1px solid #ccc;
-    border-left: none;
-    padding: 8px 12px;
+    border: none;
+    padding: 8px 15px;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
     text-decoration: none;
     display: inline-block;
 }
@@ -112,17 +109,16 @@ body {
 /* Contenu principal */
 .main-container {
     display: flex;
-    justify-content: center;
     max-width: 1200px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 0 20px;
     gap: 20px;
 }
 
 .actualites {
-    width: 70%;
+    flex: 7;
     background-color: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -132,48 +128,46 @@ body {
     font-weight: 700;
     color: #0c3066;
     margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 /* Style pour les aperçus d'articles */
 .article-preview {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding: 15px;
     background-color: #f8f9fa;
     border-radius: 5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .article-preview:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .article-preview h3 {
     font-size: 20px;
-    font-weight: 600;
     margin-bottom: 10px;
 }
 
 .article-preview h3 a {
-    color: #0d47a1;
+    color: #0c3066;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .article-preview h3 a:hover {
-    color: #0c3066;
+    text-decoration: underline;
 }
 
 .article-preview p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
     margin-bottom: 10px;
+    color: #555;
 }
 
 .article-preview small {
-    font-size: 14px;
-    color: #999;
+    color: #777;
+    font-style: italic;
 }
 
 hr {
@@ -183,142 +177,111 @@ hr {
 }
 
 /* Style pour la page article */
-.actualites article {
+.actualites article p {
+    font-size: 16px;
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
-.actualites article p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
 .actualites article small {
-    font-size: 14px;
-    color: #999;
     display: block;
-    margin-bottom: 15px;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
-/* Style pour les commentaires */
+.actualites a.btn-custom {
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+/* Commentaires */
 .comments-section {
     margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
 }
 
 .comments-section h3 {
     font-size: 20px;
     font-weight: 700;
     color: #0c3066;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .comment {
-    display: flex;
-    align-items: flex-start;
     background-color: #f8f9fa;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #e0e0e0;
-    transition: box-shadow 0.2s ease;
-}
-
-.comment:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.comment::before {
-    content: '';
-    width: 40px;
-    height: 40px;
-    background: #ccc url('../../public/images/avatar-placeholder.png') no-repeat center;
-    background-size: cover;
-    border-radius: 50%;
-    margin-right: 15px;
-    flex-shrink: 0;
-}
-
-.comment-content {
-    flex-grow: 1;
 }
 
 .comment p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
     margin-bottom: 10px;
 }
 
 .comment small {
-    font-size: 14px;
-    color: #999;
-    font-style: italic;
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .comment small strong {
-    font-weight: 700;
-    color: #0d47a1;
-}
-
-.comment a.reply-link {
-    font-size: 14px;
-    color: #0d47a1;
-    text-decoration: none;
-    margin-top: 5px;
-    display: inline-block;
-}
-
-.comment a.reply-link:hover {
     color: #0c3066;
 }
 
+.reply-link {
+    color: #0c3066;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.reply-link:hover {
+    text-decoration: underline;
+}
+
+/* Formulaire de commentaire */
 .comment-form {
     margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
 }
 
 .comment-form label {
     display: block;
-    font-size: 16px;
     font-weight: 500;
-    color: #0c3066;
     margin-bottom: 5px;
+    color: #0c3066;
 }
 
 .comment-form input,
 .comment-form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.comment-form input:focus,
-.comment-form textarea:focus {
-    border-color: #0c3066;
 }
 
 .comment-form textarea {
-    resize: vertical;
     min-height: 100px;
+    resize: vertical;
 }
 
 .comment-form button {
     background-color: #0c3066;
     color: white;
-    padding: 10px 20px;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 .comment-form button:hover {
@@ -327,24 +290,25 @@ hr {
 
 /* Sidebar */
 .sidebar {
-    width: 30%;
-    padding: 20px;
+    flex: 3;
     background-color: white;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
 }
 
 .sidebar h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: #0c3066;
     margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .sidebar li {
@@ -354,51 +318,50 @@ hr {
 .sidebar li a {
     display: block;
     padding: 10px 15px;
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
     background-color: #f1f3f5;
+    color: #333;
+    text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s;
 }
 
-.sidebar li a:hover {
-    background-color: #0d47a1;
-    color: white;
-}
-
+.sidebar li a:hover,
 .sidebar li a.active {
     background-color: #0c3066;
     color: white;
 }
 
-/* Responsive adjustments */
+/* Responsive design */
 @media (max-width: 768px) {
-    .nav-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #0c3066;
-        padding: 1rem;
+    .nav-container {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .nav-content.active {
-        display: flex;
+    .nav-brand {
+        margin-bottom: 15px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
     }
 
     .nav-list {
         flex-direction: column;
-        align-items: flex-start;
         width: 100%;
+        margin-bottom: 15px;
     }
 
     .nav-item {
-        margin: 10px 0;
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;
     }
 
     .search-form {
@@ -410,60 +373,11 @@ hr {
         width: 70%;
     }
 
-    .btn-custom {
-        width: 30%;
-    }
-
     .main-container {
         flex-direction: column;
-        align-items: center;
     }
 
-    .actualites {
+    .actualites, .sidebar {
         width: 100%;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .comments-section {
-        margin-top: 20px;
-    }
-
-    .comments-section h3 {
-        font-size: 18px;
-    }
-
-    .comment {
-        padding: 10px;
-    }
-
-    .comment::before {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-    .comment p {
-        font-size: 14px;
-    }
-
-    .comment small {
-        font-size: 12px;
-    }
-
-    .comment a.reply-link {
-        font-size: 12px;
-    }
-
-    .comment-form input,
-    .comment-form textarea {
-        font-size: 14px;
-    }
-
-    .comment-form button {
-        padding: 8px 16px;
-        font-size: 14px;
     }
 }
