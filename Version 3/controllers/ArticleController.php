@@ -32,18 +32,13 @@ class ArticleController {
         $comments = $this->articleModel->getCommentsByArticleId($articleId);
         $categories = $this->categoryModel->getAllCategories();
 
-        // Handle comment submission
+        // Gestion de l'ajout de commentaire
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['commentaire']) && isset($_POST['auteur'])) {
             $contenu = trim($_POST['commentaire']);
             $auteur = trim($_POST['auteur']);
             if (!empty($contenu) && !empty($auteur)) {
-                $stmt = $this->articleModel->pdo->prepare("INSERT INTO Commentaire (contenu, article_id, auteur) VALUES (:contenu, :article_id, :auteur)");
-                $stmt->execute([
-                    'contenu' => $contenu,
-                    'article_id' => $articleId,
-                    'auteur' => $auteur
-                ]);
-                // Redirect to avoid form resubmission
+                $this->articleModel->addComment($articleId, $auteur, $contenu);
+                // Redirection pour éviter le double envoi
                 header("Location: index.php?action=article&id=$articleId");
                 exit;
             }

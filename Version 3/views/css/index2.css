@@ -331,6 +331,11 @@ hr {
     color: white;
 }
 
+.article-thumbnail img{
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,1);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .nav-container {
@@ -380,4 +385,5 @@ hr {
     .actualites, .sidebar {
         width: 100%;
     }
+
 }

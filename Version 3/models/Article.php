@@ -13,8 +13,7 @@ class Article {
         } else {
             $stmt = $this->pdo->query("SELECT * FROM Article ORDER BY dateCreation DESC");
         }
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $results;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getArticleById($id) {
@@ -27,6 +26,16 @@ class Article {
         $stmt = $this->pdo->prepare("SELECT * FROM Commentaire WHERE article_id = :article_id ORDER BY dateCreation DESC");
         $stmt->execute(['article_id' => $articleId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Nouvelle méthode pour ajouter un commentaire
+    public function addComment($articleId, $auteur, $contenu) {
+        $stmt = $this->pdo->prepare("INSERT INTO Commentaire (contenu, article_id, auteur) VALUES (:contenu, :article_id, :auteur)");
+        return $stmt->execute([
+            'contenu' => $contenu,
+            'article_id' => $articleId,
+            'auteur' => $auteur
+        ]);
     }
 }
 ?>

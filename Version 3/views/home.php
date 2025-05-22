@@ -32,6 +32,13 @@
                 <?php foreach ($articles as $article): ?>
                     <article class="article-preview">
                         <h3><a href="index.php?action=article&id=<?= $article['id'] ?>"><?= htmlspecialchars($article['titre']) ?></a></h3>
+
+                        <?php if (!empty($article['image'])): ?>
+                            <div class="article-thumbnail">
+                                <img src="<?= htmlspecialchars($article['image']) ?>" alt="Image de l'article" style="max-width:200px; height:auto; margin: 10px 0;">
+                            </div>
+                        <?php endif; ?>
+
                         <p>
                             <?php
                             $extrait = substr($article['contenu'], 0, 100);
