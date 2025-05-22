@@ -1,341 +1,389 @@
+/* Import de la police Google Fonts Roboto avec différentes variantes */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Réinitialisation de base */
+/* Réinitialisation des styles par défaut des navigateurs */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les paddings par défaut */
+    box-sizing: border-box; /* Inclut padding et border dans le calcul des dimensions */
 }
 
+/* Styles de base pour le body */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4; /* Fond léger pour la page */
-    color: #333; /* Couleur de texte par défaut */
+    font-family: 'Roboto', sans-serif; /* Définit la police principale */
+    background-color: #f4f4f4; /* Couleur de fond légère */
+    color: #333; /* Couleur de texte principale */
 }
 
-/* Barre de navigation */
+/* ========== BARRE DE NAVIGATION ========== */
 .custom-nav {
-    background-color: #0c3066; /* Bleu foncé */
-    padding: 0.75rem 1rem;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour la nav */
+    background-color: #0c3066; /* Couleur de fond bleu foncé */
+    padding: 0.75rem 1rem; /* Espacement intérieur */
+    width: 100%; /* Prend toute la largeur */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère sous la nav */
 }
 
+/* Conteneur principal de la navigation */
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 1200px; /* Largeur maximale */
+    margin: 0 auto; /* Centrage horizontal */
+    display: flex; /* Disposition flex */
+    align-items: center; /* Alignement vertical au centre */
+    justify-content: space-between; /* Espacement entre les éléments */
 }
 
+/* Style du logo/brand */
 .nav-brand {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    display: flex; /* Disposition flex */
+    align-items: center; /* Alignement vertical */
+    font-size: 1.5rem; /* Taille du texte */
+    font-weight: 700; /* Epaisseur de la police */
 }
 
+/* Espacement de l'image dans le brand */
 .nav-brand img {
-    margin-right: 10px;
+    margin-right: 10px; /* Marge à droite de l'image */
 }
 
+/* Contenu de la navigation */
 .nav-content {
-    display: flex;
-    align-items: center;
+    display: flex; /* Disposition flex */
+    align-items: center; /* Alignement vertical */
 }
 
+/* Liste des liens de navigation */
 .nav-list {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
+    list-style: none; /* Supprime les puces */
+    display: flex; /* Disposition flex */
+    align-items: center; /* Alignement vertical */
+    margin: 0; /* Supprime les marges */
 }
 
+/* Éléments de la liste de navigation */
 .nav-item {
-    margin-left: 20px;
+    margin-left: 20px; /* Espacement entre les éléments */
 }
 
+/* Style des liens de navigation */
 .nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    padding: 8px 12px; /* Espacement intérieur */
+    font-size: 1rem; /* Taille du texte */
+    font-weight: 500; /* Epaisseur de la police */
+    transition: color 0.3s ease; /* Transition fluide pour le hover */
 }
 
+/* Effet au survol des liens */
 .nav-link:hover {
-    color: #a3bffa; /* Bleu clair au survol */
+    color: #a3bffa; /* Changement de couleur */
 }
 
+/* Style du lien actif */
 .nav-link.active {
-    background-color: #0a254f; /* Bleu plus foncé pour l'élément actif */
-    border-radius: 5px;
+    background-color: #0a254f; /* Fond plus foncé */
+    border-radius: 5px; /* Coins arrondis */
 }
 
+/* Formulaire de recherche */
 .search-form {
-    display: flex;
-    margin-left: 20px;
+    display: flex; /* Disposition flex */
+    margin-left: 20px; /* Espacement avec le reste */
 }
 
+/* Champ de recherche */
 .search-input {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-right: none;
-    border-radius: 5px 0 0 5px;
-    font-size: 1rem;
-    outline: none;
+    padding: 8px 12px; /* Espacement intérieur */
+    border: 1px solid #ccc; /* Bordure */
+    border-right: none; /* Supprime la bordure droite */
+    border-radius: 5px 0 0 5px; /* Coins arrondis à gauche */
+    font-size: 1rem; /* Taille du texte */
+    outline: none; /* Supprime le contour au focus */
 }
 
+/* Bouton personnalisé */
 .btn-custom {
-    background-color: #0c3066;
-    color: white;
-    border: 1px solid #ccc;
-    border-left: none;
-    padding: 8px 12px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
+    background-color: #0c3066; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: 1px solid #ccc; /* Bordure */
+    border-left: none; /* Supprime la bordure gauche */
+    padding: 8px 12px; /* Espacement intérieur */
+    border-radius: 0 5px 5px 0; /* Coins arrondis à droite */
+    cursor: pointer; /* Curseur pointer */
+    font-size: 1rem; /* Taille du texte */
+    font-weight: 500; /* Epaisseur de la police */
+    transition: background-color 0.3s ease; /* Transition fluide */
+    text-decoration: none; /* Pas de soulignement */
+    display: inline-block; /* Affichage en ligne */
 }
 
+/* Effet au survol du bouton */
 .btn-custom:hover {
-    background-color: #0a254f; /* Bleu plus foncé au survol */
+    background-color: #0a254f; /* Fond plus foncé */
 }
 
-/* Contenu principal */
+/* ========== CONTENU PRINCIPAL ========== */
 .main-container {
-    display: flex;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    gap: 20px;
+    display: flex; /* Disposition flex */
+    justify-content: center; /* Centrage horizontal */
+    max-width: 1200px; /* Largeur maximale */
+    margin: 20px auto; /* Marge externe */
+    padding: 20px; /* Espacement intérieur */
+    gap: 20px; /* Espacement entre les éléments flex */
 }
 
+/* Section des actualités */
 .actualites {
-    width: 70%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Largeur relative */
+    background-color: white; /* Fond blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
+/* Titre de la section actualités */
 .actualites h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #0c3066;
-    margin-bottom: 20px;
+    font-size: 24px; /* Taille du texte */
+    font-weight: 700; /* Epaisseur de la police */
+    color: #0c3066; /* Couleur bleu foncé */
+    margin-bottom: 20px; /* Marge en bas */
 }
 
-/* Style pour les aperçus d'articles */
+/* ========== APERÇUS D'ARTICLES ========== */
 .article-preview {
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 25px; /* Espacement en bas */
+    padding: 15px; /* Espacement intérieur */
+    background-color: #f8f9fa; /* Fond très léger */
+    border-radius: 5px; /* Coins arrondis */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transitions fluides */
 }
 
+/* Effet au survol d'un aperçu */
 .article-preview:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px); /* Légère élévation */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée */
 }
 
+/* Titre de l'article */
 .article-preview h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 20px; /* Taille du texte */
+    font-weight: 600; /* Epaisseur de la police */
+    margin-bottom: 10px; /* Espacement en bas */
 }
 
+/* Lien dans le titre */
 .article-preview h3 a {
-    color: #0d47a1;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: #0d47a1; /* Couleur bleue */
+    text-decoration: none; /* Pas de soulignement */
+    transition: color 0.3s ease; /* Transition fluide */
 }
 
+/* Effet au survol du lien */
 .article-preview h3 a:hover {
-    color: #0c3066;
+    color: #0c3066; /* Couleur plus foncée */
 }
 
+/* Paragraphe de l'aperçu */
 .article-preview p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    font-size: 16px; /* Taille du texte */
+    color: #666; /* Couleur de texte grise */
+    line-height: 1.6; /* Hauteur de ligne */
+    margin-bottom: 10px; /* Espacement en bas */
 }
 
+/* Texte secondaire (date, auteur...) */
 .article-preview small {
-    font-size: 14px;
-    color: #999;
+    font-size: 14px; /* Taille réduite */
+    color: #999; /* Couleur grise claire */
 }
 
+/* Séparateur horizontal */
 hr {
-    border: 0;
-    border-top: 1px solid #e0e0e0;
-    margin: 20px 0;
+    border: 0; /* Supprime la bordure par défaut */
+    border-top: 1px solid #e0e0e0; /* Bordure fine en haut */
+    margin: 20px 0; /* Espacement vertical */
 }
 
-/* Style pour la page article.php */
+/* ========== PAGE ARTICLE ========== */
+/* Conteneur article */
 .actualites article {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espacement en bas */
 }
 
+/* Paragraphes dans l'article */
 .actualites article p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 15px;
+    font-size: 16px; /* Taille du texte */
+    color: #333; /* Couleur de texte */
+    line-height: 1.8; /* Hauteur de ligne */
+    margin-bottom: 15px; /* Espacement en bas */
 }
 
+/* Métadonnées de l'article */
 .actualites article small {
-    font-size: 14px;
-    color: #999;
-    display: block;
-    margin-bottom: 15px;
+    font-size: 14px; /* Taille réduite */
+    color: #999; /* Couleur grise */
+    display: block; /* Affichage en bloc */
+    margin-bottom: 15px; /* Espacement en bas */
 }
 
-/* Sidebar */
+/* ========== SIDEBAR ========== */
 .sidebar {
-    width: 30%;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Largeur relative */
+    padding: 20px; /* Espacement intérieur */
+    background-color: white; /* Fond blanc */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
+/* Titre de la sidebar */
 .sidebar h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #0c3066;
-    margin-bottom: 15px;
+    font-size: 18px; /* Taille du texte */
+    font-weight: 700; /* Epaisseur de la police */
+    color: #0c3066; /* Couleur bleu foncé */
+    margin-bottom: 15px; /* Espacement en bas */
 }
 
+/* Liste dans la sidebar */
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Supprime les puces */
+    padding: 0; /* Supprime le padding */
+    margin: 0; /* Supprime les marges */
 }
 
+/* Éléments de la liste */
 .sidebar li {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Espacement entre les éléments */
 }
 
+/* Liens dans la sidebar */
 .sidebar li a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    background-color: #f1f3f5;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block; /* Affichage en bloc */
+    padding: 10px 15px; /* Espacement intérieur */
+    text-decoration: none; /* Pas de soulignement */
+    color: #333; /* Couleur de texte */
+    font-size: 16px; /* Taille du texte */
+    font-weight: 500; /* Epaisseur de la police */
+    background-color: #f1f3f5; /* Fond très léger */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transitions fluides */
 }
 
+/* Effet au survol des liens */
 .sidebar li a:hover {
-    background-color: #0d47a1;
-    color: white;
+    background-color: #0d47a1; /* Fond bleu */
+    color: white; /* Texte blanc */
 }
 
+/* Lien actif dans la sidebar */
 .sidebar li a.active {
-    background-color: #0c3066;
-    color: white;
+    background-color: #0c3066; /* Fond bleu foncé */
+    color: white; /* Texte blanc */
 }
 
+/* Métadonnées de l'article */
 .article-meta {
-    margin-bottom: 20px;
-    color: #666;
+    margin-bottom: 20px; /* Espacement en bas */
+    color: #666; /* Couleur de texte grise */
 }
 
+/* Contenu de l'article */
 .article-content {
-    line-height: 1.6;
-    margin-bottom: 25px;
+    line-height: 1.6; /* Hauteur de ligne */
+    margin-bottom: 25px; /* Espacement en bas */
 }
 
+/* Section des articles similaires */
 .articles-similaires {
-    margin: 30px 0;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+    margin: 30px 0; /* Espacement vertical */
+    padding: 15px; /* Espacement intérieur */
+    background-color: #f9f9f9; /* Fond très léger */
+    border-radius: 5px; /* Coins arrondis */
 }
 
+/* Titre des articles similaires */
 .articles-similaires h3 {
-    margin-top: 0;
-    color: #333;
+    margin-top: 0; /* Supprime la marge en haut */
+    color: #333; /* Couleur de texte */
 }
 
+/* Liste des articles similaires */
 .articles-similaires ul {
-    padding-left: 20px;
+    padding-left: 20px; /* Espacement à gauche */
 }
 
+/* Éléments de la liste */
 .articles-similaires li {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Espacement entre les éléments */
 }
 
+/* Texte secondaire */
 .articles-similaires small {
-    color: #666;
+    color: #666; /* Couleur grise */
 }
 
-
-
-/* Responsive */
+/* ========== MEDIA QUERIES (RESPONSIVE) ========== */
 @media (max-width: 768px) {
+    /* Navigation en mode mobile */
     .nav-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #0c3066;
-        padding: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
+        display: none; /* Masqué par défaut */
+        position: absolute; /* Position absolue */
+        top: 100%; /* En dessous de la nav */
+        left: 0; /* Alignement à gauche */
+        right: 0; /* Alignement à droite */
+        background-color: #0c3066; /* Fond bleu foncé */
+        padding: 1rem; /* Espacement intérieur */
+        flex-direction: column; /* Disposition en colonne */
+        align-items: flex-start; /* Alignement à gauche */
     }
 
+    /* Classe active pour afficher le menu */
     .nav-content.active {
-        display: flex;
+        display: flex; /* Affichage flex */
     }
 
+    /* Liste en colonne */
     .nav-list {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
+        flex-direction: column; /* Disposition en colonne */
+        align-items: flex-start; /* Alignement à gauche */
+        width: 100%; /* Pleine largeur */
     }
 
+    /* Espacement des éléments */
     .nav-item {
-        margin: 10px 0;
+        margin: 10px 0; /* Espacement vertical */
     }
 
+    /* Formulaire de recherche en mobile */
     .search-form {
-        margin: 10px 0 0 0;
-        width: 100%;
+        margin: 10px 0 0 0; /* Espacement */
+        width: 100%; /* Pleine largeur */
     }
 
+    /* Champ de recherche en mobile */
     .search-input {
-        width: 70%;
+        width: 70%; /* Largeur relative */
     }
 
+    /* Bouton en mobile */
     .btn-custom {
-        width: 30%;
+        width: 30%; /* Largeur relative */
     }
 
+    /* Conteneur principal en colonne */
     .main-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Disposition en colonne */
+        align-items: center; /* Centrage */
     }
 
+    /* Section actualités en pleine largeur */
     .actualites {
-        width: 100%;
+        width: 100%; /* Pleine largeur */
     }
 
+    /* Sidebar en pleine largeur */
     .sidebar {
-        width: 100%;
+        width: 100%; /* Pleine largeur */
     }
 }
